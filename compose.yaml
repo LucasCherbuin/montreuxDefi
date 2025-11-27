@@ -1,0 +1,12 @@
+services:
+  backend:
+    build:
+      context: .
+    container_name: montreuxDefi
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+
+volumes:
+  pgdata:
