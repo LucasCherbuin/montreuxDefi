@@ -37,8 +37,6 @@ WORKDIR /var/www/html
 # Désactiver le blocage de paquets vulnérables
 RUN composer config --global audit.block-insecure false
 
-# Créer le projet Symfony dans un sous-dossier
-RUN symfony new app --version=7.1 --webapp --no-git
 
 # Déplacer les fichiers Symfony vers la racine
 RUN mv app/* app/.* . 2>/dev/null || true && rm -rf app
@@ -49,9 +47,6 @@ COPY . .
 # Convertir les fichiers PHP en format Unix
 RUN find . -name "*.php" -exec dos2unix {} \;
 
-# Installer les dépendances Symfony (avec dev pour éviter les erreurs de bundles manquants)
-RUN composer install --optimize-autoloader \
-    && composer require symfony/yaml
 
 # Créer l'app Vue via Vite
 RUN npm create vite@latest my-vue-app -- --template vue \

@@ -18,3 +18,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    OpenAPI\Client\Configuration:
+        factory: ['OpenAPI\Client\Configuration', 'getDefaultConfiguration']
+
+    OpenAPI\Client\Api\AnalyticsApi:
+        arguments:
+            $client: '@http_client'  
+            $config: '@OpenAPI\Client\Configuration'
+
+    OpenAPI\Client\Api\RoutingApi:
+        arguments:
+            $client: '@http_client'
+            $config: '@OpenAPI\Client\Configuration'
