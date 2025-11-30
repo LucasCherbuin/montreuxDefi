@@ -7,15 +7,17 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "composer/composer": "*@dev",
+        "lexik/jwt-authentication-bundle": "*",
         "nelmio/api-doc-bundle": "^5.8",
         "symfony/console": "7.3.*",
         "symfony/dotenv": "7.3.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.3.*",
         "symfony/runtime": "7.3.*",
+        "symfony/security-bundle": "7.3.*",
         "symfony/webpack-encore-bundle": "^2.3",
-        "symfony/yaml": "7.3.*",
-        "montreux-oberland-bernois/defi-fullstack": "*@dev"
+        "symfony/yaml": "7.3.*"
     },
     "config": {
         "allow-plugins": {
@@ -70,7 +72,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+            "url": "https://github.com/composer/composer.git"
         }
     ]
+
 }

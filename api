@@ -23,4 +23,3 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AnalyticsApi->getAnalyticDistances: ', $e->getMessage(), PHP_EOL;
 }
-
